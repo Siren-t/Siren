@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Board {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(length = 200)
     private String subject;
@@ -36,4 +36,13 @@ public class Board {
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)
     private List<Reply> replyList;
+    
+    @Column(length = 200)
+    private String name;
+    
+    @Column(length = 200)
+    private String shelter;
+    
+    @Column(columnDefinition = "integer default 0", nullable = false)
+    private int hits;
 }

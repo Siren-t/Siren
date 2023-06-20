@@ -23,7 +23,7 @@ public class ReplyController {
 	private final ReplyService replyService;
 	
 	@PostMapping("/create/{id}")
-    public String createAnswer(Model model, @PathVariable("id") Integer id,@Valid ReplyForm ReplyForm, BindingResult bindingResult) {
+    public String createAnswer(Model model, @PathVariable("id") Long id,@Valid ReplyForm ReplyForm, BindingResult bindingResult) {
         Board board = this.boardService.getBoard(id);
         if(bindingResult.hasErrors()) {
         	model.addAttribute("board",board);

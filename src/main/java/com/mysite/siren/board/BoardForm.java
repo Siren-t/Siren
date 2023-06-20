@@ -14,5 +14,9 @@ public class BoardForm {
 
     @NotEmpty(message="내용은 필수항목입니다.")
     private String content;
-
+    
+    @NotEmpty(message="닉네임은 필수항목입니다.")
+    private String name;
+    
+    private String shelter;
 }

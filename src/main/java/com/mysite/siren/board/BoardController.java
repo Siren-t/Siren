@@ -29,8 +29,9 @@ public class BoardController {
 		return "board_list";
 	}
 	@GetMapping(value = "/detail/{id}")
-	public String detail(Model model, @PathVariable("id") Integer id,ReplyForm replyForm) {
+	public String detail(Model model, @PathVariable("id") Long id,ReplyForm replyForm) {
 		Board board = this.boardService.getBoard(id);
+		boardService.updateView(id); // views ++
 		model.addAttribute("board", board);
 		return "board_detail";
 	}
@@ -43,7 +44,7 @@ public class BoardController {
 		if (bindingResult.hasErrors()) {
 			return "board_form";
 		}
-		this.boardService.create(boardForm.getSubject(),boardForm.getContent());
+		this.boardService.create(boardForm.getSubject(),boardForm.getContent(),boardForm.getName(),boardForm.getShelter());
         return "redirect:/board/list"; // 질문 저장후 질문목록으로 이동
     }
 	@GetMapping("/index")
