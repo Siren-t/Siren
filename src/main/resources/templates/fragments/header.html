@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<th:block th:fragment="headerFragment">
+		<head>
+			<title>Board List</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device=width, initial-scale=1" />
+			<!-- Favicon -->
+			<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+			<!-- Bootstrap icons -->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+			<!-- Core theme CSS (includes Bootstrap) -->
+			<link href="../static/styles.css" rel="stylesheet" />
+			<link href="../static/bootstrap.min.css" rel="stylesheet" />
+			<style>
+				.btnn-default:hover {
+			background: #2F3545;
+			color: #fff;
+		}
+
+		.btnn-default {
+			background: #2F3545;
+			color: #fff;
+			padding: 9px 13px;
+			margin: 0px 0px 0px -6px;
+			font-size: 19px;
+			display: inline-block;
+				
+		}
+			</style>
+		</head>
+		<body>
+			<div style="margin : 0px 0px 0px 0px; width:100%; display:inline-block;">
+					<div class="container-fluid" style="margin : 21px 0px 0px 0px; ">
+						<div style="background-color: #2F3545; margin:16px 0px 0px 0px; color:#fff; width: 1700px;">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이모저모</p></div>
+					</div>
+				<div class="p-lg-2 text-center">
+					<div class=" m-lg-1">
+						
+						<img style="display: inline-block; width: 90px; height:80px;margin: 0px 0px 0px 115px;"
+							src="https://img.freepik.com/free-icon/flasher_318-284503.jpg?size=626&ext=jpg">
+							<div class="bg-light rounded-3 text-center"
+					style="width:400px; margin: -12px 0px 0px 1063px; position:absolute;">
+					<div class="m-1 m-lg-1" style=" background-color: rgb(0, 128, 192);">
+						현재 위치 GPS
+					</div>
+				</div>
+							<div style="margin : 0px 50px 0px 0px; display:inline-block;"></div>
+						<input type="text" placeholder="대피소 위치 검색"
+							style="display:inline-block; border:3px solid #2F3545;font-size:21px; width:408px; height:44px; margin: 0px 0px 0px 700px;"
+							class="display-3 fw-bold"></input>
+						<a class="btnn-default" href="#!">🔍 <a>
+					</div>
+			</div>
+		</body>
+	</th:block>
+</html>
