@@ -1,0 +1,14 @@
+package com.mysite.siren.map;
+
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Address {
+	
+	
+
+}
