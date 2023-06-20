@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Content Toggle Example</title>
+    <style>
+	.btn {
+	  box-sizing: border-box;
+	  appearance: none;
+	  background-color: transparent;
+	  border: 2px solid #e74c3c;
+	  border-radius: 0.6em;
+	  color: #e74c3c;
+	  cursor: pointer;
+	  display: flex;
+	  align-self: center;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1;
+	  margin: 20px;
+	  padding: 1.2em 2.8em;
+	  text-decoration: none;
+	  text-align: center;
+	  text-transform: uppercase;
+	  font-family: 'Montserrat', sans-serif;
+	  font-weight: 700;
+	
+	  &:hover,
+	  &:focus {
+	    color: #fff;
+	    outline: 0;
+	  }
+	}
+	
+	.first {
+	  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	  &:hover {
+	    box-shadow: 0 0 40px 40px #e74c3c inset;
+	  }
+	}
+	</style>
+
+    
+    <style>
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+    
+    <style>
+        .button-container {
+            display: flex; /* flexbox 사용 */
+        }
+        .button-container button {
+			flex: 1; /* 버튼들이 가로 공간을 동일하게 분배 */
+            padding: 20px 30px;
+        }
+    </style>
+    
+    <style>	
+	.tit{
+	margin:10px auto 0 auto;
+	font-size:30px;
+	font-weight:300;
+	}
+	
+	.tit_sub{
+	  margin:0 0 24px 0;
+	  font-size:20px;
+	  color:red
+	}
+	
+	li{
+	  display:block;
+	  position:relative;
+	  font-size:20px;
+	  margin:16px auto;
+	  padding:0;
+	  list-style:none;
+	  box-sizing:border-box;
+	  border:0
+	}
+	
+	.list_style_arrow4 li:before{
+	  content:'';
+	  display:inline-block;
+	  width:6px;
+	  height:6px;
+	  margin:-5px 12px auto auto;
+	  vertical-align:middle;
+	  border-right:1px solid red;
+	  border-top:1px solid red;
+	  transform:rotate(45deg)
+	}
+	</style>
+    
+    <script>
+    function toggleContent(contentId) {
+        var contents = document.getElementsByClassName("content");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("active");
+        }
+        var selectedContent = document.getElementById(contentId);
+        selectedContent.classList.add("active");
+    }
+    </script>
+</head>
+<body>
+	<div class="button-container">
+		<button type="button" onclick="toggleContent('evacuation')">긴급대피 행동요령</button>
+	    <button type="button" onclick="toggleContent('fire')">화재 발생시 행동요령</button>
+	    <button type="button" onclick="toggleContent('recovery')">피해복구 요령</button>
+	    <button type="button" onclick="toggleContent('supplies')">대피준비물</button>
+	</div>
+    <div id="evacuation" class="content">
+    <h2>긴급대피 행동요령</h2>
+	
+	<ul class="list_style_arrow4">
+	<li>1. 주변 사람에게 알립니다.</li> 
+	</ul>
+		
+		
+    <pre>
+	- 자고 있을 때 화재경보가 울리면 불이 났는지 확인하려고 하기보다는 소리를 질러 주변 사람에게 알립니다.
+	2. 대피방법을 결정합니다.
+	- 손등으로 출입문 손잡이를 만져보아 손잡이가 따뜻하거나 뜨거우면 문 반대쪽에 불이 난 것이므로 문을 열지 않습니다.
+	- 연기 들어오는 방향과 출입문 손잡이를 만져보아 계단으로 나갈지 창문으로 구조를 요청할지 결정합니다
+	3. 신속히 대피합니다.
+	- 대피할 때는 엘리베이터를 절대 이용하지 않고 계단을 통하여 지상으로 안전하게 대피합니다.
+	- 대피가 어려운 경우에는 창문으로 구조요청을 하거나 대피공간 또는 경량칸막이를 이용하여 대피합니다.
+	4. 119로 신고합니다.
+	- 안전하게 대피한 후 119에 신고합니다.
+	- 휴대폰이 있어서 신고가 가능하다면 속히 해주시고 신고하느라 대피시간을 놓치지 않도록 합니다.
+	5. 대피 후 인원을 확인합니다.
+	- 놀이터 등 사전에 약속한 안전한 곳으로 대피한 후 인원을 확인합니다.
+	- 주변에 보이지 않는 사람이 있다면 출동한 소방관에게 알려줍니다.
+	</pre>
+    </div>
+    <div id="fire" class="content">
+        <h2>화재 발생시 행동요령</h2>
+        <p>움직여!</p>
+    </div>
+    <div id="recovery" class="content">
+        <h2>피해복구 요령</h2>
+        <p>피해 복구에 대한 내용</p>
+    </div>
+        <div id="supplies" class="content">
+        <h2>대피준비물</h2>
+        <p>준비물에 대한 내용</p>
+    </div>
+</body>
+</html>
